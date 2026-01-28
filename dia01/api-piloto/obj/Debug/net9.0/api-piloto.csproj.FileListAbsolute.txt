@@ -34,3 +34,4 @@ C:\deloitte-bootcamp-dia26\dia01\api-piloto\obj\Debug\net9.0\refint\api-piloto.d
 C:\deloitte-bootcamp-dia26\dia01\api-piloto\obj\Debug\net9.0\api-piloto.pdb
 C:\deloitte-bootcamp-dia26\dia01\api-piloto\obj\Debug\net9.0\api-piloto.genruntimeconfig.cache
 C:\deloitte-bootcamp-dia26\dia01\api-piloto\obj\Debug\net9.0\ref\api-piloto.dll
+C:\deloitte-bootcamp-dia26\dia01\api-piloto\obj\Debug\net9.0\swae.build.ex.cache
