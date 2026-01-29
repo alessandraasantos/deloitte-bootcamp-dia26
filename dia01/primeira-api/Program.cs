@@ -15,7 +15,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
