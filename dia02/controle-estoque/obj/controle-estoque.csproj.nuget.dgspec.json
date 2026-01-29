@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\deloitte-bootcamp-dia26\\dia03\\controle-estoque\\controle-estoque.csproj": {}
+    "C:\\deloitte-bootcamp-dia26\\dia02\\controle-estoque\\controle-estoque.csproj": {}
   },
   "projects": {
-    "C:\\deloitte-bootcamp-dia26\\dia03\\controle-estoque\\controle-estoque.csproj": {
+    "C:\\deloitte-bootcamp-dia26\\dia02\\controle-estoque\\controle-estoque.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia03\\controle-estoque\\controle-estoque.csproj",
+        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia02\\controle-estoque\\controle-estoque.csproj",
         "projectName": "controle-estoque",
-        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia03\\controle-estoque\\controle-estoque.csproj",
+        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia02\\controle-estoque\\controle-estoque.csproj",
         "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia03\\controle-estoque\\obj\\",
+        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia02\\controle-estoque\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"

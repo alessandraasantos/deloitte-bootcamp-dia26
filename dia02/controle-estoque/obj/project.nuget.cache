@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AGF1A8yWnaI=",
+  "dgSpecHash": "OW1eomtsHGs=",
   "success": true,
-  "projectFilePath": "C:\\deloitte-bootcamp-dia26\\dia03\\controle-estoque\\controle-estoque.csproj",
+  "projectFilePath": "C:\\deloitte-bootcamp-dia26\\dia02\\controle-estoque\\controle-estoque.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aluno\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
     "C:\\Users\\aluno\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
