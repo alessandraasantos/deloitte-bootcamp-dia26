@@ -96,5 +96,9 @@ private class Estoque
         return "Distribuido para venda";
     }
     
+    public decimal calcularValorEstoque(decimal precoPorTonelada)
+    {
+        return this.Quantidade * precoPorTonelada;
+    }
 
 }
