@@ -68,8 +68,12 @@ public class Producao
 
     public int refinarMinerio(Minerio minerio)
     {
+        switch (Refinamento) {
+            case Refinamento.Granularidade:
+            return 0;
+        }
+        return this.quantidadeFinalRefinamento(minerio);           
         
-        return quantidadeFinalRefinamento(minerio);
     }
    private int quantidadeFinalRefinamento(Minerio minerio)
     {
