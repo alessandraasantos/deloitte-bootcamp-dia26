@@ -1,104 +1,26 @@
-using System.Dynamic;
-using System.Security;
-using Microsoft.VisualBasic;
-
-public class Minas
+public class Mina
 {
+    public string Codigo { get; private set; }
+    public string Nome { get; private set; }
+    public decimal Capacidade { get; private set; }
 
-    Minerio minerio = new Minerio();
-    public string codigoMinas { get; set; } = "001";
-    public string Nome { get; set; } = "Mina da Vale";
-    public decimal Capacidade { get; set; } = 1000;
-    string acessarextrairMinerio()
+    public Mina(string codigo, string nome, decimal capacidade)
     {
-        minerio.codigo = "1";
-        minerio.Tipo = "Ouro";
-
-        return "Minerio";
+        Codigo = codigo;
+        Nome = nome;
+        Capacidade = capacidade;
     }
 
-      
-     public Minerio extrairminerio2()
+    public Minerio AcessarExtrairMinerio(bool isGestorMina)
     {
-        if (GestorMina)
-        return this.extrairminerio2();
-         else
-         minerio minerio = new minerio();
-        
-        return minerio;
+        if (!isGestorMina)
+            throw new UnauthorizedAccessException("Usuário não é gestor da mina");
+
+        return ExtrairMinerio();
     }
 
-
-public string getCodigoMinas()
+    private Minerio ExtrairMinerio()
     {
-        return this.codigoMinas;
+        return new Minerio("M-001", "Ouro");
     }
-
-public string setCodigoMinas(string codigoMinas)
-    {
-        
-    }
-
-
-}
-
-public class Producao
-{
-    int id;
-    public string Nome { get; set; } = "Mina da Vale";
-    public Minas CodigoMinas { get; set; }
-    public decimal Capacidade { get; set; } = 1000;
-    public DateAndTime Ano { get; set; } = 2026;
-    public decimal Quantidade { get; set; }
-     public string encaminharParaEstoque()
-    {
-        return "Encaminhado para o estoque";
-    }
-    decimal getVolume()
-    {
-        return this.Volume;
-    }
-
-    decimal setVolume(decimal Volume)
-    {
-        this.Volume = Volume;
-    }   
-
-    //getter e setter 
-
-    public int refinarMinerio(Minerio minerio)
-    {
-        switch (Refinamento) {
-            case Refinamento.Granularidade:
-            return 0;
-        }
-        return this.quantidadeFinalRefinamento(minerio);           
-        
-    }
-   private int quantidadeFinalRefinamento(Minerio minerio)
-    {
-        
-        return quantidadeRefinada;
-    }
-}
-
-private class Estoque
-{
-    int id;
-    int ProducaoId;
-    public DateAndTime Ano { get; set; } = 2026;
-    public string Tipo { get; set; }
-    public decimal Quantidade { get; set; }
-    public Minas CodigoMinas { get; set; }
-
-    public string distribuirMinerio()
-    {
-        return "Distribuido para venda";
-    }
-    
-    public decimal calcularValorEstoque(decimal precoPorTonelada)
-    {
-        return this.Quantidade * precoPorTonelada;
-    }
-
 }

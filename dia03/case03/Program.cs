@@ -1,19 +1,25 @@
-﻿using System.Runtime.InteropServices;
+﻿var mina = new Mina("001", "Mina Alpha", 1000);
 
-Console.WriteLine("Hello, World!");
+// Gestor acessando
+var minerio = mina.AcessarExtrairMinerio(true);
+Console.WriteLine($"Minério extraído: {minerio.Tipo}");
 
-Minas mina = new Minas();
-Minerio minerioExtraido = mina.extrairminerio2();
-Console.WriteLine(minerioExtraido.Tipo
+var producao = new Producao(
+    1,
+    mina,
+    DateTime.Now,
+    500,
+    1000
 );
 
-Producao producao = new Producao();
-producao.CodigoMinas = mina;
-Console.WriteLine(producao.CodigoMinas.Nome);
+var estoque = new Estoque(
+    1,
+    producao,
+    300,
+    "Galpão Central"
+);
 
+estoque.Retirar(50);
 
-
-Estoque estoque = new Estoque();
-estoque.CodigoMinas = mina;
-
-Console.WriteLine(estoque.CodigoMinas.Nome);
+Console.WriteLine($"Estoque restante: {estoque.Quantidade}");
+Console.WriteLine($"Valor total: {estoque.CalcularValor(200)}");
