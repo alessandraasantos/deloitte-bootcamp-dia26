@@ -8,7 +8,8 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\aluno\\.nuget\\packages\\": {}
+    "C:\\Users\\aless\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,16 +17,22 @@
       "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia02\\case2.1\\case2.1.csproj",
       "projectName": "case2.1",
       "projectPath": "C:\\deloitte-bootcamp-dia26\\dia02\\case2.1\\case2.1.csproj",
-      "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
       "outputPath": "C:\\deloitte-bootcamp-dia26\\dia02\\case2.1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
