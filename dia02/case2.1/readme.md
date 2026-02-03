@@ -12,7 +12,7 @@ Registrar e gerenciar o check-in e check-out de visitantes, permitindo o control
 - Tratar erros utilizando `try/catch`
 
 ### Funcionalidades extras
-- Listar visitantes ordenados por ID
+- Listar visitantes ordenados por **ID**
 - Filtrar visitantes em primeira visita
 
 ## Conceitos Aplicados
@@ -27,15 +27,14 @@ Registrar e gerenciar o check-in e check-out de visitantes, permitindo o control
 O projeto foi desenvolvido em uma aplicação Console e está organizado em classes, mesmo estando em um único arquivo:
 - **Visitante**: representa o modelo do visitante
 - **ControleVisitantes**: responsável pelas regras de negócio
-- **Program (Main)**: responsável pelo menu e interação com o usuário
+- **Menu**: responsável pelo menu e interação com o usuário
 
 ##  Como executar
-1. Clone o repositório
+1. Clone o repositório: git clone: **https://github.com/alessandraasantos/deloitte-bootcamp-dia26.git**
 2. Abra o projeto em uma IDE compatível com C# (Visual Studio ou VS Code)
-3. Execute o projeto
-4. Utilize o menu no console para interagir com o sistema
+3. Execute o projeto usando: **dotnet run**
+4. Abra o terminal para interagir com o sistema
 
-## Observações
-O sistema mantém os dados em memória durante a execução do programa, não utilizando banco de dados.
+
 
 

@@ -114,7 +114,7 @@ namespace ControleDeVisitantes
         }
     }
 
-        class Program
+        class Menu
     {
         static void Main(string[] args)
         {
