@@ -23,7 +23,7 @@ Registrar e gerenciar o check-in e check-out de visitantes, permitindo o control
 - Collections (`List<T>`)
 - Tratamento de exceções (`try/catch`)
 
-## 🛠️ Estrutura do Projeto
+## Estrutura do Projeto
 O projeto foi desenvolvido em uma aplicação Console e está organizado em classes, mesmo estando em um único arquivo:
 - **Visitante**: representa o modelo do visitante
 - **ControleVisitantes**: responsável pelas regras de negócio
