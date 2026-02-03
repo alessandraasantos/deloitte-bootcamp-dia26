@@ -24,7 +24,7 @@ public class ContaCorrente
         if (valor <= 0)
             throw new ArgumentOutOfRangeException(nameof(valor), "Valor de saque deve ser positivo.");
 
-        // Conta normal
+        
         if (!EhEspecial)
         {
             if (Saldo >= valor)
@@ -35,7 +35,6 @@ public class ContaCorrente
             return false;
         }
 
-        // Conta especial (usa limite)
         if (Saldo + Limite >= valor)
         {
             Saldo -= valor;
