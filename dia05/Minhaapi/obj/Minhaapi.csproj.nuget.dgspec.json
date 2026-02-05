@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj": {}
+    "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj": {}
   },
   "projects": {
-    "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj": {
+    "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj",
+        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj",
         "projectName": "Minhaapi",
-        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj",
+        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj",
         "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\obj\\",
+        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
