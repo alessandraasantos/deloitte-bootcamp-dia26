@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj": {}
+    "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj": {}
   },
   "projects": {
-    "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj": {
+    "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj",
+        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj",
         "projectName": "Minhaapi",
-        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\Minhaapi.csproj",
+        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\Minhaapi.csproj",
         "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia05\\minhaapi\\obj\\",
+        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia05\\Minhaapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,7 +44,15 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "EFCore.NamingConventions": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[10.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[10.0.2, )"
             },
