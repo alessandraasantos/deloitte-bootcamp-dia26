@@ -59,6 +59,7 @@ namespace MinhaApi.Controllers
         [HttpGet("{id:int}")]
         
         public async Task<IActionResult> GetById(int id)
+        
         {
             var l = await _db.LotesMinerio.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
             if (l is null) return NotFound();
@@ -69,6 +70,9 @@ namespace MinhaApi.Controllers
             );
 
             return Ok(dto);
+            
+
+            
         }
 
         
