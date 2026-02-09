@@ -2710,7 +2710,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aluno\\.nuget\\packages\\": {}
+    "C:\\Users\\aless\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2718,11 +2718,11 @@
       "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\Minhaapi.csproj",
       "projectName": "Minhaapi",
       "projectPath": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\Minhaapi.csproj",
-      "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
       "outputPath": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"

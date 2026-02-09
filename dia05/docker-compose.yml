@@ -19,6 +19,7 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
+      
     # Labels opcionais úteis para Rancher (facilitam identificação/agrupamento)
     labels:
       io.rancher.container.pull_image: always
