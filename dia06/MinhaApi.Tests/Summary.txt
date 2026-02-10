@@ -29,3 +29,6 @@ Minhaapi                                          30%
   MinhaApi.Models.LoteMinerio                    100%
   Program                                          0%
   System.Runtime.CompilerServices                  0%
+
+
+  
