@@ -1,31 +1,31 @@
 Summary
-  Generated on: 10/02/2026 - 17:21:22
+  Generated on: 10/02/2026 - 17:29:21
   Parser: OpenCover
   Assemblies: 1
   Classes: 10
   Files: 9
-  Line coverage: 24.1%
-  Covered lines: 139
-  Uncovered lines: 437
+  Line coverage: 30%
+  Covered lines: 173
+  Uncovered lines: 403
   Coverable lines: 576
   Total lines: 934
-  Branch coverage: 16.1% (45 of 278)
-  Covered branches: 45
+  Branch coverage: 24.8% (69 of 278)
+  Covered branches: 69
   Total branches: 278
-  Method coverage: 64.5% (51 of 79)
-  Full method coverage: 60.7% (48 of 79)
-  Covered methods: 51
-  Fully covered methods: 48
+  Method coverage: 65.8% (52 of 79)
+  Full method coverage: 65.8% (52 of 79)
+  Covered methods: 52
+  Fully covered methods: 52
   Total methods: 79
 
-Minhaapi                                        24.1%
+Minhaapi                                          30%
   Microsoft.AspNetCore.OpenApi.Generated           0%
-  MinhaApi.Controllers.LotesMinerioController   63.3%
+  MinhaApi.Controllers.LotesMinerioController    100%
   MinhaApi.Data.AppDbContext                     100%
   MinhaApi.Dtos.CreateLoteMinerioDto             100%
   MinhaApi.Dtos.LoteMinerioResponseDto           100%
   MinhaApi.Dtos.LotesMinerioDeleteDto            100%
   MinhaApi.Dtos.LotesMinerioUpdateDto            100%
-  MinhaApi.Models.LoteMinerio                   94.1%
+  MinhaApi.Models.LoteMinerio                    100%
   Program                                          0%
   System.Runtime.CompilerServices                  0%

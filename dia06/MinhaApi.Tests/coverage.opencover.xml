@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageSession>
-  <Summary numSequencePoints="576" visitedSequencePoints="173" numBranchPoints="278" visitedBranchPoints="68" sequenceCoverage="30.03" branchCoverage="24.46" maxCyclomaticComplexity="340" minCyclomaticComplexity="340" visitedClasses="12" numClasses="23" visitedMethods="52" numMethods="79" />
+  <Summary numSequencePoints="576" visitedSequencePoints="173" numBranchPoints="278" visitedBranchPoints="69" sequenceCoverage="30.03" branchCoverage="24.82" maxCyclomaticComplexity="340" minCyclomaticComplexity="340" visitedClasses="12" numClasses="23" visitedMethods="52" numMethods="79" />
   <Modules>
-    <Module hash="FE7CCE1F-1DB9-4D85-AD1F-C56C165BCAE6">
+    <Module hash="423B8E0C-FF3F-458A-A312-73FA98E56451">
       <ModulePath>Minhaapi.dll</ModulePath>
-      <ModuleTime>2026-02-10T08:23:05</ModuleTime>
+      <ModuleTime>2026-02-10T08:28:47</ModuleTime>
       <ModuleName>Minhaapi</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\deloitte-bootcamp-dia26\Minhaapi\Program.cs" />
@@ -978,7 +978,7 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="17" visitedSequencePoints="17" numBranchPoints="10" visitedBranchPoints="9" sequenceCoverage="100" branchCoverage="90" maxCyclomaticComplexity="10" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="12" numMethods="12" />
+          <Summary numSequencePoints="17" visitedSequencePoints="17" numBranchPoints="10" visitedBranchPoints="10" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="10" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="12" numMethods="12" />
           <FullName>MinhaApi.Models.LoteMinerio</FullName>
           <Methods>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
@@ -987,7 +987,7 @@
               <Name>System.Int32 MinhaApi.Models.LoteMinerio::get_Id()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="13" uspid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="15" uspid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="12" ec="1" el="12" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -998,7 +998,7 @@
               <Name>System.String MinhaApi.Models.LoteMinerio::get_CodigoLote()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="35" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="40" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1009,7 +1009,7 @@
               <Name>System.String MinhaApi.Models.LoteMinerio::get_MinaOrigem()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="38" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="42" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="16" ec="1" el="16" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1020,7 +1020,7 @@
               <Name>System.Decimal MinhaApi.Models.LoteMinerio::get_TeorFe()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="15" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="25" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="19" ec="1" el="19" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1031,7 +1031,7 @@
               <Name>System.Decimal MinhaApi.Models.LoteMinerio::get_Umidade()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="12" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="21" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="20" ec="1" el="20" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1042,7 +1042,7 @@
               <Name>System.Nullable`1&lt;System.Decimal&gt; MinhaApi.Models.LoteMinerio::get_SiO2()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="5" uspid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="21" ec="1" el="21" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1053,7 +1053,7 @@
               <Name>System.Nullable`1&lt;System.Decimal&gt; MinhaApi.Models.LoteMinerio::get_P()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="5" uspid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="22" ec="1" el="22" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1064,7 +1064,7 @@
               <Name>System.Decimal MinhaApi.Models.LoteMinerio::get_Toneladas()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="9" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="15" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="7" offset="7" sc="0" sl="25" ec="1" el="25" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1075,7 +1075,7 @@
               <Name>System.DateTime MinhaApi.Models.LoteMinerio::get_DataProducao()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="2" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="26" ordinal="0" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="26" ec="1" el="26" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
@@ -1097,34 +1097,34 @@
               <Name>System.String MinhaApi.Models.LoteMinerio::get_LocalizacaoAtual()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="37" uspid="28" ordinal="0" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="41" uspid="28" ordinal="0" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="10" offset="10" sc="0" sl="28" ec="1" el="28" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="10" nPathComplexity="10" sequenceCoverage="100" branchCoverage="90" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="10" visitedBranchPoints="9" sequenceCoverage="100" branchCoverage="90" maxCyclomaticComplexity="10" minCyclomaticComplexity="10" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+            <Method cyclomaticComplexity="10" nPathComplexity="10" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="10" visitedBranchPoints="10" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="10" minCyclomaticComplexity="10" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Boolean MinhaApi.Models.LoteMinerio::ValidarQualidade()</Name>
               <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="4" uspid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="5" uspid="32" ordinal="1" sl="32" sc="1" el="32" ec="2" bec="4" bev="3" fileid="3" />
-                <SequencePoint vc="4" uspid="33" ordinal="2" sl="33" sc="1" el="33" ec="2" bec="4" bev="4" fileid="3" />
-                <SequencePoint vc="3" uspid="34" ordinal="3" sl="34" sc="1" el="34" ec="2" bec="2" bev="2" fileid="3" />
+                <SequencePoint vc="7" uspid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="9" uspid="32" ordinal="1" sl="32" sc="1" el="32" ec="2" bec="4" bev="4" fileid="3" />
+                <SequencePoint vc="7" uspid="33" ordinal="2" sl="33" sc="1" el="33" ec="2" bec="4" bev="4" fileid="3" />
+                <SequencePoint vc="5" uspid="34" ordinal="3" sl="34" sc="1" el="34" ec="2" bec="2" bev="2" fileid="3" />
                 <SequencePoint vc="1" uspid="35" ordinal="4" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="3" />
-                <SequencePoint vc="4" uspid="36" ordinal="5" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="7" uspid="36" ordinal="5" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="4" uspid="32" ordinal="0" path="0" offset="17" offsetend="19" sl="32" fileid="3" />
-                <BranchPoint vc="0" uspid="32" ordinal="1" path="1" offset="17" offsetend="39" sl="32" fileid="3" />
-                <BranchPoint vc="1" uspid="32" ordinal="2" path="0" offset="42" offsetend="44" sl="32" fileid="3" />
-                <BranchPoint vc="3" uspid="32" ordinal="3" path="1" offset="42" offsetend="48" sl="32" fileid="3" />
-                <BranchPoint vc="2" uspid="33" ordinal="4" path="0" offset="64" offsetend="66" sl="33" fileid="3" />
+                <BranchPoint vc="6" uspid="32" ordinal="0" path="0" offset="17" offsetend="19" sl="32" fileid="3" />
+                <BranchPoint vc="1" uspid="32" ordinal="1" path="1" offset="17" offsetend="39" sl="32" fileid="3" />
+                <BranchPoint vc="2" uspid="32" ordinal="2" path="0" offset="42" offsetend="44" sl="32" fileid="3" />
+                <BranchPoint vc="5" uspid="32" ordinal="3" path="1" offset="42" offsetend="48" sl="32" fileid="3" />
+                <BranchPoint vc="4" uspid="33" ordinal="4" path="0" offset="64" offsetend="66" sl="33" fileid="3" />
                 <BranchPoint vc="1" uspid="33" ordinal="5" path="1" offset="64" offsetend="86" sl="33" fileid="3" />
-                <BranchPoint vc="1" uspid="33" ordinal="6" path="0" offset="89" offsetend="91" sl="33" fileid="3" />
-                <BranchPoint vc="2" uspid="33" ordinal="7" path="1" offset="89" offsetend="95" sl="33" fileid="3" />
-                <BranchPoint vc="1" uspid="34" ordinal="8" path="0" offset="113" offsetend="115" sl="34" fileid="3" />
+                <BranchPoint vc="2" uspid="33" ordinal="6" path="0" offset="89" offsetend="91" sl="33" fileid="3" />
+                <BranchPoint vc="3" uspid="33" ordinal="7" path="1" offset="89" offsetend="95" sl="33" fileid="3" />
+                <BranchPoint vc="2" uspid="34" ordinal="8" path="0" offset="113" offsetend="115" sl="34" fileid="3" />
                 <BranchPoint vc="1" uspid="34" ordinal="9" path="1" offset="113" offsetend="119" sl="34" fileid="3" />
               </BranchPoints>
               <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="11" offset="11" sc="0" sl="31" ec="1" el="36" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
