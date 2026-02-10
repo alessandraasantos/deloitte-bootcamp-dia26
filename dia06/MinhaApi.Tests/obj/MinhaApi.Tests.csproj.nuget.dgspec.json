@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia06\\MinhaApi.Tests\\MinhaApi.Tests.csproj",
         "projectName": "MinhaApi.Tests",
         "projectPath": "C:\\deloitte-bootcamp-dia26\\dia06\\MinhaApi.Tests\\MinhaApi.Tests.csproj",
-        "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
         "outputPath": "C:\\deloitte-bootcamp-dia26\\dia06\\MinhaApi.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -48,6 +48,10 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[10.0.2, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.14.1, )"
@@ -365,11 +369,11 @@
         "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\Minhaapi.csproj",
         "projectName": "Minhaapi",
         "projectPath": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\Minhaapi.csproj",
-        "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
         "outputPath": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

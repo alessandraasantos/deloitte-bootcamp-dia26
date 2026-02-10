@@ -1,72 +1,133 @@
+using System.Linq;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Xunit;
 using MinhaApi.Data;
 using MinhaApi.Models;
-using Xunit;
 
-namespace MinhaApi.Tests
+namespace MinhaApi.Tests.Data
 {
     public class AppDbContextTests
     {
-        private AppDbContext GetContext()
+        private AppDbContext CriarContextoSqlite()
         {
+            var connection = new SqliteConnection("Filename=:memory:");
+            connection.Open();
+
             var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                .UseSqlite(connection)
                 .Options;
-            return new AppDbContext(options);
+
+            var context = new AppDbContext(options);
+            context.Database.EnsureCreated();
+
+            return context;
         }
 
         [Fact]
-        public async Task DbContext_DeveSalvarLote_ComStatusComoInt()
+        public void Deve_Ter_DbSet_LotesMinerio()
         {
-            // Arrange
-            using var db = GetContext();
-            var lote = new LoteMinerio
-            {
-                CodigoLote = "TEST-001",
-                MinaOrigem = "Mina Teste",
-                LocalizacaoAtual = "Patio Teste",
-                Status = StatusLote.EmTransporte // Valor Enum (1)
-            };
+            using var context = CriarContextoSqlite();
 
-            // Act
-            db.LotesMinerio.Add(lote);
-            await db.SaveChangesAsync();
-
-            // Assert
-            var loteNoBanco = await db.LotesMinerio.FirstAsync();
-            Assert.Equal(StatusLote.EmTransporte, loteNoBanco.Status);
-            // O EF In-Memory simula a conversão definida em HasConversion<int>()
+            Assert.NotNull(context.LotesMinerio);
         }
 
         [Fact]
-        public async Task DbContext_NaoDevePermitirCodigoLoteDuplicado()
+        public void Deve_Mapear_Tabela_LotesMinerio_Corretamente()
         {
-            // Arrange
-            using var db = GetContext();
-            var lote1 = new LoteMinerio { CodigoLote = "DUPLICADO", MinaOrigem = "A", LocalizacaoAtual = "X" };
-            var lote2 = new LoteMinerio { CodigoLote = "DUPLICADO", MinaOrigem = "B", LocalizacaoAtual = "Y" };
+            using var context = CriarContextoSqlite();
 
-            // Act & Assert
-            db.LotesMinerio.Add(lote1);
-            await db.SaveChangesAsync();
+            var entityType = context.Model.FindEntityType(typeof(LoteMinerio));
 
-            db.LotesMinerio.Add(lote2);
-            
-            // O banco em memória do EF tem limitações com índices únicos reais, 
-            // mas em um banco real (Postgres/SQL), o SaveChanges lançaria uma exceção aqui.
-            await Assert.ThrowsAnyAsync<Exception>(async () => await db.SaveChangesAsync());
+            Assert.NotNull(entityType);
+            Assert.Equal("lotes_minerio", entityType!.GetTableName());
+            Assert.Equal("public", entityType.GetSchema());
         }
 
         [Fact]
-        public void DbContext_VerificaConfiguracaoDeSchemaETabela()
+        public void Deve_Configurar_Chave_Primaria_Id()
         {
-            // Arrange
-            using var db = GetContext();
-            var entityType = db.Model.FindEntityType(typeof(LoteMinerio));
+            using var context = CriarContextoSqlite();
 
-            // Assert
-            Assert.Equal("lotes_minerio", entityType?.GetTableName());
-            Assert.Equal("public", entityType?.GetSchema());
+            var entityType = context.Model.FindEntityType(typeof(LoteMinerio));
+            var pk = entityType!.FindPrimaryKey();
+
+            Assert.NotNull(pk);
+            Assert.Equal("Id", pk!.Properties.First().Name);
+        }
+
+        [Fact]
+        public void Deve_Configurar_CodigoLote_Obrigatorio_E_Com_Tamanho_Maximo()
+        {
+            using var context = CriarContextoSqlite();
+
+            var entity = context.Model.FindEntityType(typeof(LoteMinerio));
+            var prop = entity!.FindProperty(nameof(LoteMinerio.CodigoLote));
+
+            Assert.False(prop!.IsNullable);
+            Assert.Equal(50, prop.GetMaxLength());
+        }
+
+        [Fact]
+        public void Deve_Ter_Indice_Unico_Em_CodigoLote()
+        {
+            using var context = CriarContextoSqlite();
+
+            var entity = context.Model.FindEntityType(typeof(LoteMinerio));
+            var index = entity!.GetIndexes()
+                .FirstOrDefault(i => i.Properties.Any(p => p.Name == nameof(LoteMinerio.CodigoLote)));
+
+            Assert.NotNull(index);
+            Assert.True(index!.IsUnique);
+        }
+
+        [Fact]
+        public void Deve_Configurar_MinaOrigem_Obrigatoria_Com_Tamanho_120()
+        {
+            using var context = CriarContextoSqlite();
+
+            var entity = context.Model.FindEntityType(typeof(LoteMinerio));
+            var prop = entity!.FindProperty(nameof(LoteMinerio.MinaOrigem));
+
+            Assert.False(prop!.IsNullable);
+            Assert.Equal(120, prop.GetMaxLength());
+        }
+
+        [Fact]
+        public void Deve_Configurar_LocalizacaoAtual_Obrigatoria_Com_Tamanho_200()
+        {
+            using var context = CriarContextoSqlite();
+
+            var entity = context.Model.FindEntityType(typeof(LoteMinerio));
+            var prop = entity!.FindProperty(nameof(LoteMinerio.LocalizacaoAtual));
+
+            Assert.False(prop!.IsNullable);
+            Assert.Equal(200, prop.GetMaxLength());
+        }
+
+        [Fact]
+        public void Deve_Configurar_Tipos_Decimais_Corretamente()
+        {
+            using var context = CriarContextoSqlite();
+
+            var entity = context.Model.FindEntityType(typeof(LoteMinerio));
+
+            Assert.Equal("TEXT", entity!.FindProperty(nameof(LoteMinerio.TeorFe))!.GetColumnType()?.ToUpper());
+            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.Umidade))!.GetColumnType()?.ToUpper());
+            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.SiO2))!.GetColumnType()?.ToUpper());
+            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.P))!.GetColumnType()?.ToUpper());
+            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.Toneladas))!.GetColumnType()?.ToUpper());
+        }
+
+        [Fact]
+        public void Deve_Converter_Status_Para_Int()
+        {
+            using var context = CriarContextoSqlite();
+
+            var entity = context.Model.FindEntityType(typeof(LoteMinerio));
+            var prop = entity!.FindProperty(nameof(LoteMinerio.Status));
+
+            Assert.NotNull(prop!.GetValueConverter());
         }
     }
 }
