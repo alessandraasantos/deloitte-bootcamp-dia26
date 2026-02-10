@@ -112,11 +112,12 @@ namespace MinhaApi.Tests.Data
 
             var entity = context.Model.FindEntityType(typeof(LoteMinerio));
 
-            Assert.Equal("TEXT", entity!.FindProperty(nameof(LoteMinerio.TeorFe))!.GetColumnType()?.ToUpper());
-            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.Umidade))!.GetColumnType()?.ToUpper());
-            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.SiO2))!.GetColumnType()?.ToUpper());
-            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.P))!.GetColumnType()?.ToUpper());
-            Assert.Equal("TEXT", entity.FindProperty(nameof(LoteMinerio.Toneladas))!.GetColumnType()?.ToUpper());
+            // Ajustado para validar contra as definições numéricas do seu AppDbContext
+            Assert.Equal("NUMERIC(5,2)", entity!.FindProperty(nameof(LoteMinerio.TeorFe))!.GetColumnType()?.ToUpper());
+            Assert.Equal("NUMERIC(5,2)", entity.FindProperty(nameof(LoteMinerio.Umidade))!.GetColumnType()?.ToUpper());
+            Assert.Equal("NUMERIC(5,2)", entity.FindProperty(nameof(LoteMinerio.SiO2))!.GetColumnType()?.ToUpper());
+            Assert.Equal("NUMERIC(5,3)", entity.FindProperty(nameof(LoteMinerio.P))!.GetColumnType()?.ToUpper());
+            Assert.Equal("NUMERIC(12,3)", entity.FindProperty(nameof(LoteMinerio.Toneladas))!.GetColumnType()?.ToUpper());
         }
 
         [Fact]
@@ -127,7 +128,8 @@ namespace MinhaApi.Tests.Data
             var entity = context.Model.FindEntityType(typeof(LoteMinerio));
             var prop = entity!.FindProperty(nameof(LoteMinerio.Status));
 
-            Assert.NotNull(prop!.GetValueConverter());
+            // Verifica se o tipo de armazenamento final no banco é inteiro
+            Assert.Equal(typeof(int), prop!.GetProviderClrType());
         }
     }
 }

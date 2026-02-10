@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MinhaApi.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17eeb36803bd451b7a5990b443e6afa1c9f7b730")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0b6ad76287036532b82c5fc08035d9d4a694abf")]
 [assembly: System.Reflection.AssemblyProductAttribute("MinhaApi.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MinhaApi.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
