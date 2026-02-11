@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat Code Coverage">
+        <Configuration>
+          <Exclude>
+            <!-- Excluir arquivos que estão 0% -->
+            [Minhaapi]Program*
+            [Minhaapi]Microsoft.AspNetCore.OpenApi.Generated*
+            [Minhaapi]System.Runtime.CompilerServices*
+          </Exclude>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

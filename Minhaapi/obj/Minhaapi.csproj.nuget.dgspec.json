@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\Minhaapi.csproj",
         "projectName": "Minhaapi",
         "projectPath": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\Minhaapi.csproj",
-        "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
         "outputPath": "C:\\deloitte-bootcamp-dia26\\Minhaapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
