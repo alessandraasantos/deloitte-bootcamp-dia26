@@ -1,7 +1,7 @@
-
 using Microsoft.EntityFrameworkCore;
 using MinhaApi.Data;
-using StackExchange.Redis; // ← ADICIONADO
+using MinhaApi.Fila;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,12 +16,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         .UseSnakeCaseNamingConvention();
 });
 
-// 🔴 REGISTRO DO REDIS (ADICIONADO)
+// 🔴 ADICIONADO — conexão Redis
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 {
-    var configuration = builder.Configuration["Redis:ConnectionString"] ?? "localhost:6379";
-    return ConnectionMultiplexer.Connect(configuration);
+    var configuration = builder.Configuration.GetSection("Redis")["ConnectionString"];
+    return ConnectionMultiplexer.Connect(configuration!);
 });
+
+// 🔴 ADICIONADO — publisher Redis
+builder.Services.AddScoped<IRedisPublisher, RedisPublisher>();
 
 // Recomendação do Npgsql para compatibilidade de timestamp (se aplicável)
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

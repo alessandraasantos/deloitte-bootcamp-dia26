@@ -255,8 +255,8 @@ C:\deloitte-bootcamp-dia26\Minhaapi\obj\Debug\net10.0\Minhaapi.pdb
 C:\deloitte-bootcamp-dia26\Minhaapi\obj\Debug\net10.0\Minhaapi.genruntimeconfig.cache
 C:\deloitte-bootcamp-dia26\Minhaapi\obj\Debug\net10.0\ref\Minhaapi.dll
 C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\appsettings.Development.json
-C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\Minhaapi.staticwebassets.endpoints.json
 C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\appsettings.json
+C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\Minhaapi.staticwebassets.endpoints.json
 C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\Minhaapi.exe
 C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\Minhaapi.deps.json
 C:\deloitte-bootcamp-dia26\dia07\Minhaapi\bin\Debug\net10.0\Minhaapi.runtimeconfig.json

@@ -61,16 +61,18 @@ namespace MinhaApi.Controllers
             await _db.SaveChangesAsync();
 
             // ================= ENVIO PARA O REDIS (ADICIONADO) =================
-            await _publisher.PublishAsync("fila-lotes-minerio", new
-            {
-                lote.Id,
-                lote.CodigoLote,
-                lote.MinaOrigem,
-                lote.Toneladas,
-                lote.Status,
-                lote.LocalizacaoAtual,
-                DataEnvio = DateTime.UtcNow
-            });
+            await _publisher.PublishAsync(new
+
+       {
+    
+        lote.Id,
+        lote.CodigoLote,
+        lote.MinaOrigem,
+        lote.Toneladas,
+        lote.Status,
+        lote.LocalizacaoAtual,
+        DataEnvio = DateTime.UtcNow
+      });
 
             return CreatedAtAction(nameof(GetById), new { id = lote.Id }, lote);
         }
