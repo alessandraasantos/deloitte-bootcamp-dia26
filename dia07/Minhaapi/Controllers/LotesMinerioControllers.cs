@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MinhaApi.Data;
 using MinhaApi.Models;
 using MinhaApi.Dtos;
+using MinhaApi.Fila; 
 
 namespace MinhaApi.Controllers
 {
@@ -11,8 +12,13 @@ namespace MinhaApi.Controllers
     public class LotesMinerioController : ControllerBase
     {
         private readonly AppDbContext _db;
+        private readonly IRedisPublisher _publisher; 
 
-        public LotesMinerioController(AppDbContext db) => _db = db;
+        public LotesMinerioController(AppDbContext db, IRedisPublisher publisher) 
+        {
+            _db = db;
+            _publisher = publisher;
+        }
 
         // ================= POST =================
         [HttpPost]
@@ -54,6 +60,18 @@ namespace MinhaApi.Controllers
             _db.LotesMinerio.Add(lote);
             await _db.SaveChangesAsync();
 
+            // ================= ENVIO PARA O REDIS (ADICIONADO) =================
+            await _publisher.PublishAsync("fila-lotes-minerio", new
+            {
+                lote.Id,
+                lote.CodigoLote,
+                lote.MinaOrigem,
+                lote.Toneladas,
+                lote.Status,
+                lote.LocalizacaoAtual,
+                DataEnvio = DateTime.UtcNow
+            });
+
             return CreatedAtAction(nameof(GetById), new { id = lote.Id }, lote);
         }
 
@@ -72,7 +90,7 @@ namespace MinhaApi.Controllers
             return Ok(dto);
         }
 
-        // ================= GET ALL (ADICIONADO) =================
+        // ================= GET ALL =================
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -87,7 +105,7 @@ namespace MinhaApi.Controllers
             return Ok(lotes);
         }
 
-        // ================= DELETE (ADICIONADO) =================
+        // ================= DELETE =================
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -100,52 +118,47 @@ namespace MinhaApi.Controllers
             await _db.SaveChangesAsync();
 
             return NoContent();
-       
         }
-    
-       // ================= UPDATE (ADICIONADO) =================
-[HttpPut("{id:int}")]
-public async Task<IActionResult> Update(int id, [FromBody] LotesMinerioUpdateDto input)
-{
-    var lote = await _db.LotesMinerio.FindAsync(id);
 
-    if (lote is null)
-        return NotFound($"Lote com Id {id} não encontrado.");
+        // ================= UPDATE =================
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update(int id, [FromBody] LotesMinerioUpdateDto input)
+        {
+            var lote = await _db.LotesMinerio.FindAsync(id);
 
-    // Validações básicas
-    if (string.IsNullOrWhiteSpace(input.MinaOrigem))
-        return BadRequest("MinaOrigem é obrigatória.");
+            if (lote is null)
+                return NotFound($"Lote com Id {id} não encontrado.");
 
-    if (string.IsNullOrWhiteSpace(input.LocalizacaoAtual))
-        return BadRequest("LocalizacaoAtual é obrigatória.");
+            if (string.IsNullOrWhiteSpace(input.MinaOrigem))
+                return BadRequest("MinaOrigem é obrigatória.");
 
-    if (input.TeorFe is < 0 or > 100)
-        return BadRequest("TeorFe deve estar entre 0 e 100 (%).");
+            if (string.IsNullOrWhiteSpace(input.LocalizacaoAtual))
+                return BadRequest("LocalizacaoAtual é obrigatória.");
 
-    if (input.Umidade is < 0 or > 100)
-        return BadRequest("Umidade deve estar entre 0 e 100 (%).");
+            if (input.TeorFe is < 0 or > 100)
+                return BadRequest("TeorFe deve estar entre 0 e 100 (%).");
 
-    if (input.Toneladas <= 0)
-        return BadRequest("Toneladas deve ser > 0.");
+            if (input.Umidade is < 0 or > 100)
+                return BadRequest("Umidade deve estar entre 0 e 100 (%).");
 
-    if (input.Status is < 0 or > 2)
-        return BadRequest("Status inválido (use 0, 1 ou 2).");
+            if (input.Toneladas <= 0)
+                return BadRequest("Toneladas deve ser > 0.");
 
-    // Atualização dos campos
-    lote.MinaOrigem = input.MinaOrigem;
-    lote.TeorFe = input.TeorFe;
-    lote.Umidade = input.Umidade;
-    lote.SiO2 = input.SiO2;
-    lote.P = input.P;
-    lote.Toneladas = input.Toneladas;
-    lote.Status = (StatusLote)input.Status;
-    lote.LocalizacaoAtual = input.LocalizacaoAtual;
+            if (input.Status is < 0 or > 2)
+                return BadRequest("Status inválido (use 0, 1 ou 2).");
 
-    await _db.SaveChangesAsync();
+            lote.MinaOrigem = input.MinaOrigem;
+            lote.TeorFe = input.TeorFe;
+            lote.Umidade = input.Umidade;
+            lote.SiO2 = input.SiO2;
+            lote.P = input.P;
+            lote.Toneladas = input.Toneladas;
+            lote.Status = (StatusLote)input.Status;
+            lote.LocalizacaoAtual = input.LocalizacaoAtual;
 
-    return NoContent();
-    
-   }
+            await _db.SaveChangesAsync();
 
-  }
+            return NoContent();
+        }
+    }
 }
