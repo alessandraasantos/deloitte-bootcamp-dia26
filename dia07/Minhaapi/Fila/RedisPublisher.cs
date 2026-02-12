@@ -1,34 +1,23 @@
 using System.Text.Json;
-using Microsoft.Extensions.Options;
 using StackExchange.Redis;
-using MinhaApi.Models;
 
 namespace MinhaApi.Fila
 {
     public class RedisPublisher : IRedisPublisher
     {
-        private readonly IDatabase _db;
-        private readonly RedisSettings _settings;
+        private readonly IConnectionMultiplexer _redis;
 
-        public RedisPublisher(IOptions<RedisSettings> options)
+        public RedisPublisher(IConnectionMultiplexer redis)
         {
-            _settings = options.Value;
-
-            var connection = ConnectionMultiplexer.Connect(_settings.ConnectionString);
-            _db = connection.GetDatabase();
+            _redis = redis;
         }
 
-        public async Task PublicarLoteAsync(LoteMinerio lote)
+        public async Task PublishAsync(string channel, object message)
         {
-            var json = JsonSerializer.Serialize(lote);
+            var subscriber = _redis.GetSubscriber();
+            var json = JsonSerializer.Serialize(message);
 
-            await _db.StreamAddAsync(
-                _settings.StreamName,
-                new NameValueEntry[]
-                {
-                    new("data", json)
-                }
-            );
+            await subscriber.PublishAsync(channel, json);
         }
     }
 }

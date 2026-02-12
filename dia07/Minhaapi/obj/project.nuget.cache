@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gET2F2TU6fU=",
+  "dgSpecHash": "5CxB677ABLY=",
   "success": true,
   "projectFilePath": "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\Minhaapi.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,7 @@
     "C:\\Users\\aless\\.nuget\\packages\\npgsql\\10.0.0\\npgsql.10.0.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.0\\npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
-    "C:\\Users\\aless\\.nuget\\packages\\stackexchange.redis\\2.10.14\\stackexchange.redis.2.10.14.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\stackexchange.redis\\2.11.0\\stackexchange.redis.2.11.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\swashbuckle.aspnetcore\\10.1.1\\swashbuckle.aspnetcore.10.1.1.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.1.1\\swashbuckle.aspnetcore.swagger.10.1.1.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.1.1\\swashbuckle.aspnetcore.swaggergen.10.1.1.nupkg.sha512",
@@ -42,7 +42,7 @@
     "C:\\Users\\aless\\.nuget\\packages\\system.composition.hosting\\9.0.0\\system.composition.hosting.9.0.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\system.composition.runtime\\9.0.0\\system.composition.runtime.9.0.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
-    "C:\\Users\\aless\\.nuget\\packages\\system.io.hashing\\9.0.10\\system.io.hashing.9.0.10.nupkg.sha512"
+    "C:\\Users\\aless\\.nuget\\packages\\system.io.hashing\\10.0.2\\system.io.hashing.10.0.2.nupkg.sha512"
   ],
   "logs": []
 }

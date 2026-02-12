@@ -602,11 +602,11 @@
           }
         }
       },
-      "StackExchange.Redis/2.10.14": {
+      "StackExchange.Redis/2.11.0": {
         "type": "package",
         "dependencies": {
           "Pipelines.Sockets.Unofficial": "2.2.8",
-          "System.IO.Hashing": "9.0.10"
+          "System.IO.Hashing": "10.0.2"
         },
         "compile": {
           "lib/net8.0/StackExchange.Redis.dll": {
@@ -811,15 +811,15 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.IO.Hashing/9.0.10": {
+      "System.IO.Hashing/10.0.2": {
         "type": "package",
         "compile": {
-          "lib/net9.0/System.IO.Hashing.dll": {
+          "lib/net10.0/System.IO.Hashing.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/System.IO.Hashing.dll": {
+          "lib/net10.0/System.IO.Hashing.dll": {
             "related": ".xml"
           }
         },
@@ -2504,10 +2504,10 @@
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
-    "StackExchange.Redis/2.10.14": {
-      "sha512": "7SaubYT00NJrMg2KFK7N1ovK6XGz7RMdwB49+AOKDYkL5W2eMWxSNolrX/GF7hpwFfy/Dj2+Cj29wi4VZSW/DA==",
+    "StackExchange.Redis/2.11.0": {
+      "sha512": "tCYDmkaCpEc48MZHh/FgQKavX/kqjpBAIyEFxeO9LTuHRV0flJndXcKpfbgUKahKuk/OI6TEXM6NwKu0gi6xjQ==",
       "type": "package",
-      "path": "stackexchange.redis/2.10.14",
+      "path": "stackexchange.redis/2.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2524,7 +2524,7 @@
         "lib/netcoreapp3.1/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.10.14.nupkg.sha512",
+        "stackexchange.redis.2.11.0.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
@@ -2791,21 +2791,22 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.IO.Hashing/9.0.10": {
-      "sha512": "9gv5z71xaWWmcGEs4bXdreIhKp2kYLK2fvPK5gQkgnWMYvZ8ieaxKofDjxL3scZiEYfi/yW2nJTiKV2awcWEdA==",
+    "System.IO.Hashing/10.0.2": {
+      "sha512": "AKJknIFi9O3+rGExxTry188JPvUoZAPcCtS2qdqyFhIzsxQ1Ap94BeGDG0VzVEHakhmRxmJtVih6TsHoghIt/g==",
       "type": "package",
-      "path": "system.io.hashing/9.0.10",
+      "path": "system.io.hashing/10.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.IO.Hashing.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets",
+        "lib/net10.0/System.IO.Hashing.dll",
+        "lib/net10.0/System.IO.Hashing.xml",
         "lib/net462/System.IO.Hashing.dll",
         "lib/net462/System.IO.Hashing.xml",
         "lib/net8.0/System.IO.Hashing.dll",
@@ -2814,7 +2815,7 @@
         "lib/net9.0/System.IO.Hashing.xml",
         "lib/netstandard2.0/System.IO.Hashing.dll",
         "lib/netstandard2.0/System.IO.Hashing.xml",
-        "system.io.hashing.9.0.10.nupkg.sha512",
+        "system.io.hashing.10.0.2.nupkg.sha512",
         "system.io.hashing.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2827,7 +2828,7 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 10.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.2",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.0",
-      "StackExchange.Redis >= 2.10.14",
+      "StackExchange.Redis >= 2.11.0",
       "Swashbuckle.AspNetCore >= 10.1.1"
     ]
   },
@@ -2898,7 +2899,7 @@
           },
           "StackExchange.Redis": {
             "target": "Package",
-            "version": "[2.10.14, )"
+            "version": "[2.11.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
