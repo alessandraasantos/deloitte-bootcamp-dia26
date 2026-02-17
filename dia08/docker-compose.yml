@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:7
-    container_name: redis_dia07
+    image: redis:8
+    container_name: redis_dia08
     ports:
-      - "6379:6379"
+      - "6380:6380"
