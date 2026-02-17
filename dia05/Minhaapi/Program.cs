@@ -9,7 +9,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var cs = "Host=localhost;Port=5432;Database=minhaapi_dbdone;Username=postgres;Password=postgres"; 
+    var cs = "Host=localhost;Port=5432;Database=minhaapi_db;Username=postgres;Password=postgres"; 
     options
         .UseNpgsql(cs)
         .UseSnakeCaseNamingConvention();

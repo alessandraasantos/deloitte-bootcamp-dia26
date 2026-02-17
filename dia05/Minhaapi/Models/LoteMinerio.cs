@@ -26,5 +26,13 @@ namespace MinhaApi.Models
         public DateTime DataProducao { get; set; }     // quando foi gerado o lote
         public StatusLote Status { get; set; }         // estoque / transporte / embarcado
         public string LocalizacaoAtual { get; set; } = ""; // "Mina", "Pátio Carajás", "EFVM - Trem 123", "Porto Tubarão", etc.
+
+         public bool ValidarQualidade()
+  {
+        if (TeorFe < 0 || TeorFe > 100) return false;
+        if (Umidade < 0 || Umidade > 100) return false;
+        if (Toneladas <= 0) return false;
+                return true;
+        } 
     }
 }
