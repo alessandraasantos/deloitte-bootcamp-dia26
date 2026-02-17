@@ -21,9 +21,6 @@ A branch `develop` está organizada da seguinte forma:
 
 Contém listas de exercícios de lógica e programação em C#, utilizadas para reforçar conceitos fundamentais da linguagem e da resolução de problemas.
 
-* **Exercicios3/Lista3**
-  Exercícios práticos com foco Programação Orientada a Objetos
-
 ---
 
 ### Minhaapi
@@ -57,7 +54,7 @@ Objetivo:
 
 ---
 
-### dia01, dia02, dia03, dia05
+### dia01, dia02, dia03, dia 04 e dia05
 
 Pastas que representam a evolução diária do aprendizado incluindo cases para colocar em prática o que foi aprendido.
 
@@ -67,6 +64,7 @@ Cada dia contém:
 * Organização de Pastas
 * Exercícios práticos relacionados ao conteúdo estudado no dia
 * Cases
+* Exercícios de Programação Orientado a Objetos
 
 ---
 
@@ -89,6 +87,17 @@ dotnet test
 ---
 
 ---
+
+
+dia07/Minhaapi
+
+* Uso de filas
+* Banco  Nosql Redis 
+* Docker
+* Insomnia
+* Regras de Negócios
+
+
 
 ## Objetivo do repositório
 
