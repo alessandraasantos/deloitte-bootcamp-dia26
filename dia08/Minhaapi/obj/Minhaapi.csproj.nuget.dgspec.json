@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\Minhaapi.csproj": {}
+    "C:\\deloitte-bootcamp-dia26\\dia08\\Minhaapi\\Minhaapi.csproj": {}
   },
   "projects": {
-    "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\Minhaapi.csproj": {
+    "C:\\deloitte-bootcamp-dia26\\dia08\\Minhaapi\\Minhaapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\Minhaapi.csproj",
+        "projectUniqueName": "C:\\deloitte-bootcamp-dia26\\dia08\\Minhaapi\\Minhaapi.csproj",
         "projectName": "Minhaapi",
-        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\Minhaapi.csproj",
+        "projectPath": "C:\\deloitte-bootcamp-dia26\\dia08\\Minhaapi\\Minhaapi.csproj",
         "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
-        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\obj\\",
+        "outputPath": "C:\\deloitte-bootcamp-dia26\\dia08\\Minhaapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config"

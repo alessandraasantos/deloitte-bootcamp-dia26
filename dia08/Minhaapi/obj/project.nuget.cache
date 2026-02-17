@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5CxB677ABLY=",
+  "dgSpecHash": "G6t6pOmmb2Y=",
   "success": true,
-  "projectFilePath": "C:\\deloitte-bootcamp-dia26\\dia07\\Minhaapi\\Minhaapi.csproj",
+  "projectFilePath": "C:\\deloitte-bootcamp-dia26\\dia08\\Minhaapi\\Minhaapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aless\\.nuget\\packages\\efcore.namingconventions\\10.0.1\\efcore.namingconventions.10.0.1.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

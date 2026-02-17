@@ -2,13 +2,13 @@
 
 ## Descrição
 
-Este projeto consiste em uma **API REST** desenvolvida em **.NET 10 (C#)** para gerenciamento de **lotes de minério**, permitindo operações completas de **CRUD** (Create, Read, Update e Delete).
+Este projeto consiste em uma **API REST** desenvolvida em **.NET 10 (C#)** para gerenciamento de **lotes de minério**
 
-Além do CRUD tradicional, a aplicação foi integrada ao **Redis** utilizando **Docker Compose**, permitindo o envio de eventos de processamento assíncrono por meio de **streams/mensageria**.
+Além de usar alguns métodos, a aplicação foi integrada ao **Redis** utilizando **Docker Compose**, permitindo o envio de eventos de processamento assíncrono por meio de **streams/mensageria**.
 
 O objetivo do projeto é demonstrar:
 
-* Arquitetura em camadas (Controller → Service → Data)
+* Arquitetura em camadas 
 * Boas práticas com **DTOs**
 * Persistência com **Entity Framework Core** e **PostgreSQL**
 * Integração com **Redis** para processamento assíncrono
@@ -24,7 +24,6 @@ A estrutura segue separação de responsabilidades:
 MinhaApi
 │
 ├── Controllers        → Endpoints HTTP da aplicação
-├── Services           → Regras de negócio
 ├── Models             → Entidades do domínio
 ├── Dtos               → Objetos de transferência de dados
 ├── Data               → DbContext e configurações do EF Core
@@ -36,13 +35,12 @@ MinhaApi
 
 Responsáveis por receber requisições HTTP, validar dados de entrada e delegar o processamento para a camada de **Service**.
 
-Endpoints disponíveis:
+Endpoints Utilizados disponíveis:
 
-* `GET /lotes` → Lista todos os lotes
-* `GET /lotes/{id}` → Busca lote por ID
-* `POST /lotes` → Cria um novo lote
-* `PUT /lotes/{id}` → Atualiza um lote existente
-* `DELETE /lotes/{id}` → Remove um lote
+
+* `POST localhost:5035/LotesMinerio` → Cria um novo lote
+* `GET localhost:5035/LotesMinerio{id}` → Busca lote por ID Para verificar se o lote foi criado
+
 
 ### Services
 
