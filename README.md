@@ -1,84 +1,173 @@
 
-# Bootcamp C# e .NET - Deloitte
+---
 
+# Bootcamp C# e .NET – Deloitte
 
+Este repositório reúne os **projetos, exercícios e evolução prática** desenvolvidos ao longo do bootcamp de desenvolvimento em **C# e .NET**.
 
+A branch **develop** concentra todas as atividades realizadas, incluindo:
 
+* Desenvolvimento de **APIs REST**
+* Aplicação de **Programação Orientada a Objetos (POO)**
+* Implementação de **CRUD completo**
+* Criação de **testes unitários**
+* Uso de **Docker, PostgreSQL e Redis**
+* Organização do aprendizado por **dias de evolução**
 
-
-
-Este repositório reúne os projetos, exercícios e evoluções desenvolvidos durante o bootcamp de desenvolvimento .NET.
-
-A branch **develop** concentra todas as atividades desenvolvidas, incluindo APIs, POO, testes unitários, listas de exercícios e a organização do aprendizado dividido por dias.
+Este projeto representa a consolidação prática do aprendizado adquirido durante o bootcamp.
 
 ---
 
-## Estrutura do repositório
+# Estrutura do repositório
 
-A branch `develop` está organizada da seguinte forma:
-
-### Exercicios
-
-Contém listas de exercícios de lógica e programação em C#, utilizadas para reforçar conceitos fundamentais da linguagem e da resolução de problemas.
+A branch `develop` está organizada por **dias de estudo**, conforme descrito abaixo.
 
 ---
 
-### Minhaapi
-
-Projeto principal de API REST desenvolvido em .NET.
-
-Principais características:
-
-* Implementação de operações CRUD
-* Uso de DTOs para transferência de dados
-* Persistência com Entity Framework Core
-* Integração com banco de dados PostgreSQL no ambiente do Dbvear
-* Utlização do Docker via contâiner
-* Organização em camadas (Controllers, Models, DTOs, DbContext)
-* Insomnia para realizar os métodos: Post, Get, Put e Delete
-* 
-
-Este projeto representa a evolução prática do aprendizado de desenvolvimento de APIs durante o bootcamp.
-
----
-
-### dia00/primeira-api
+## dia00 – primeira-api
 
 Primeira API criada durante o início do bootcamp.
 
-Objetivo:
+**Objetivos:**
 
 * Introduzir a criação de endpoints HTTP
 * Compreender a estrutura básica de um projeto ASP.NET
 * Realizar testes iniciais de requisições
+  
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia00](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia00)
 
 ---
 
-### dia01, dia02, dia03, dia 04 e dia05
+## dia01 – API Piloto (Cadastro de Usuários)
 
-Pastas que representam a evolução diária do aprendizado incluindo cases para colocar em prática o que foi aprendido.
+API REST simples desenvolvida em **C# e .NET** para praticar:
 
-Cada dia contém:
+* Organização em camadas (**Controllers, Services, DTOs**)
+* Validação de dados
+* Configuração do **Swagger**
 
-* Exemplos de código
-* Organização de Pastas
-* Exercícios práticos relacionados ao conteúdo estudado no dia
-* Cases
-* Exercícios de Programação Orientado a Objetos
+Atualmente possui endpoint para validação/criação de usuários com retorno de sucesso quando os dados são válidos.
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia01](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia01)
 
 ---
 
-### dia06/MinhaApi.Tests
+## dia02 – Aplicações Console (POO)
 
-Projeto de **testes unitários** da API principal.
+Contém dois projetos:
 
-Características:
+### case2 – Controle de Estoque
 
-* Testes unitários testando cada parte individual do projeto
-* Validação de regras de negócio e comportamentos da API
-* Garantia de funcionamento correto dos métodos implementados
+Aplicação em C# via **Console**, com foco em:
 
-Execução dos testes:
+* Orientação a objetos
+* Validação de dados
+* Regras de negócio
+
+**Funcionalidades:**
+
+* Cadastrar, editar, remover e listar produtos em memória
+* Simulação de estoque simples
+
+### case2.1 – Controle de Check-in de Visitantes
+
+Sistema de gerenciamento de visitantes com:
+
+* Cadastro de visitantes
+* Listagem e busca por nome
+* Registro de saída
+* Tratamento de erros com `try/catch`
+
+**Extras:**
+
+* Ordenação por ID
+* Filtro de primeira visita
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia02](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia02)
+
+---
+
+## dia03 – Projeto de Mineração (POO)
+
+Projeto para aplicação de conceitos de **Programação Orientada a Objetos**, incluindo:
+
+* Encapsulamento
+* Regras de negócio
+* Controle de acesso
+* Relacionamento entre classes
+
+O sistema simula o processo de:
+
+* Extração de minério
+* Produção
+* Armazenamento em estoque
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia03](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia03)
+
+---
+
+## dia04 – Exercícios de POO
+
+Implementação de duas classes:
+
+### Lampada.cs
+
+* Atributos e métodos de **ligar/desligar**
+
+### ContaCorrente.cs
+
+* Número, saldo, status especial e limite
+* Métodos de:
+
+  * Saque com validação
+  * Depósito
+  * Consulta de saldo
+  * Verificação de uso do cheque especial
+
+Ambas integradas ao `Program.cs`.
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia04/Exercicios3/Lista3](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia04/Exercicios3/Lista3)
+
+---
+
+## dia05 – API REST com CRUD
+
+Projeto principal da API desenvolvido em **.NET**.
+
+**Principais características:**
+
+* Operações **CRUD completas**
+* Uso de **DTOs**
+* Persistência com **Entity Framework Core**
+* Banco **PostgreSQL**
+* Execução em **Docker**
+* Arquitetura em camadas
+* Testes de endpoints via **Insomnia**
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia05](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia05)
+
+---
+
+## dia06 – Testes Unitários
+
+Projeto dedicado a **testes unitários** da API principal.
+
+**Inclui:**
+
+* Testes isolados por componente
+* Validação de regras de negócio
+* Garantia de funcionamento correto dos métodos
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia06](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia06)
+
+**Execução dos testes:**
 
 ```bash
 dotnet test
@@ -86,60 +175,83 @@ dotnet test
 
 ---
 
----
+## dia07 – Integração com Redis e Filas
 
+Evolução da API com:
 
-### dia07/Minhaapi
+* Integração do **Docker** com **Redis (NoSQL)**
+* Criação de **filas de processamento**
+* Classes de:
 
-* Uso de filas
-* Banco  Nosql Redis 
-* Docker
-* Insomnia
-* Regras de Negócios
+  * Conexão
+  * Contrato
+  * Implementação de envio de mensagens
 
+Testes realizados via **Insomnia** e monitoramento com **Redis Insight**.
 
-
-## Objetivo do repositório
-
-Este repositório tem como finalidade:
-
-* Consolidar conhecimentos em C# e .NET
-* Praticar o desenvolvimento de APIs REST
-* Aprender sobre os métodos: Put, Get, Put e Delete por meio de um Crud
-* Aplicar testes unitários para validação de funcionalidades
-* Organizar a evolução do aprendizado por etapas do bootcamp
-
-Também serve como material de estudo, prática e portfólio de desenvolvimento.
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia07](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia07)
 
 ---
 
-## Como executar o projeto
+## dia08 – Regras de Negócio e Serviços
 
-### Clonar o repositório
+Expansão da API com:
+
+* Métodos **GET e POST sem body JSON**
+* Classificação de qualidade do lote
+* Cálculo de preço por toneladas
+* Histórico de movimentações
+* Avanço de status do lote
+* Penalidade por umidade
+* Camada **Service**
+* Controller adicional (**LotesExtraController**)
+* Uso contínuo de **Redis, Docker e filas**
+
+**Link:**
+[https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia08](https://github.com/alessandraasantos/deloitte-bootcamp-dia26/tree/develop/dia08)
+
+---
+
+# Objetivo do repositório
+
+* Consolidar conhecimentos em **C# e .NET**
+* Praticar desenvolvimento de **APIs REST**
+* Implementar **CRUD completo**
+* Aplicar **testes unitários**
+* Organizar a evolução do aprendizado por etapas
+
+Também funciona como **material de estudo, prática e portfólio**.
+
+---
+
+# Como executar o projeto
+
+## Clonar o repositório
 
 ```bash
 git clone https://github.com/alessandraasantos/deloitte-bootcamp-dia26.git
 ```
 
-### Acessar a branch de desenvolvimento
+## Acessar a branch develop
 
 ```bash
 git checkout develop
 ```
 
-### Restaurar dependências
+## Restaurar dependências
 
 ```bash
 dotnet restore
 ```
 
-### Executar a API principal
+## Executar a API principal
 
 ```bash
 dotnet run --project Minhaapi
 ```
 
-### Executar os testes unitários
+## Executar os testes unitários
 
 ```bash
 dotnet test
@@ -147,13 +259,14 @@ dotnet test
 
 ---
 
-## Fluxo de branches
+# Fluxo de branches
 
-* **main**
-  Contém a versão inicial do projeto.
+**main**
+Versão inicial do projeto.
 
-* **develop**
-  Contém o desenvolvimento contínuo, incluindo novas funcionalidades, exercícios, APIs e testes unitários.
+**develop**
+Branch principal de desenvolvimento contínuo, contendo exercícios, APIs, testes e novas funcionalidades.
 
 ---
+
 

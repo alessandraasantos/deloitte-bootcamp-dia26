@@ -95,7 +95,7 @@ Define regras de negócio da aplicação.
 Após rodar a aplicação, a documentação interativa pode ser acessada em:
 
 ```
-https://localhost:{porta}/swagger
+https://localhost:5130/swagger
 ```
 
 O Swagger permite testar os endpoints diretamente pelo navegador.

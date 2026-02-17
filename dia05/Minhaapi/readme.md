@@ -50,7 +50,7 @@ A API permite:
 
 ## Tecnologias Utilizadas
 
-* C# / .NET 7
+* C# / .NET 10
 * Entity Framework Core
 * PostgreSQL
 * Docker (para ambientes)
