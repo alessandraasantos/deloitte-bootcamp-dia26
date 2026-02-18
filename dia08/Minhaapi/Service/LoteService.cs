@@ -58,18 +58,18 @@ historico.Add(registro);
 return historico;
 }
 
-
-// 4. Avançar Status do Lote
-public string AvancarStatus(string statusAtual)
+// 4. Avançar Status do Lote 
+public StatusLote AvancarStatus(StatusLote statusAtual)
 {
-return statusAtual switch
-{
-"Estoque" => "Transporte",
-"Transporte" => "Embarcado",
-"Embarcado" => "Finalizado",
-_ => "Status desconhecido"
-};
+    return statusAtual switch
+    {
+        StatusLote.EmEstoque => StatusLote.EmTransporte,
+        StatusLote.EmTransporte => StatusLote.Embarcado,
+        StatusLote.Embarcado => StatusLote.Embarcado, // não avança mais
+        _ => statusAtual
+    };
 }
+
 
 
 // 5. Penalidade por Umidade

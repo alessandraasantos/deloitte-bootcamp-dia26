@@ -8,6 +8,7 @@ namespace MinhaApi.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<LoteMinerio> LotesMinerio => Set<LoteMinerio>();
+        public DbSet<MovimentacaoLote> MovimentacoesLote => Set<MovimentacaoLote>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +42,29 @@ namespace MinhaApi.Data
                 e.Property(x => x.Toneladas).HasColumnType("numeric(12,3)");
 
                 e.Property(x => x.Status).HasConversion<int>();
+
+                modelBuilder.Entity<MovimentacaoLote>(e =>
+{
+                e.ToTable("movimentacoes_lote");
+
+                 e.HasKey(x => x.Id);
+
+               e.Property(x => x.Local)
+              .HasMaxLength(200)
+        .IsRequired();
+
+          e.Property(x => x.Status)
+        .HasConversion<int>();
+
+          e.Property(x => x.DataMovimentacao)
+        .IsRequired();
+
+          e.HasOne(x => x.LoteMinerio)
+        .WithMany()
+        .HasForeignKey(x => x.LoteMinerioId)
+        .OnDelete(DeleteBehavior.Cascade);
+});
+
             });
         }
     }
