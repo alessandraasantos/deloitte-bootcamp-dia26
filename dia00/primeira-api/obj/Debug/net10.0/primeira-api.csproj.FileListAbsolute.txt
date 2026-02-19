@@ -1,9 +1,0 @@
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.csproj.AssemblyReference.cache
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\rpswa.dswa.cache.json
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.GeneratedMSBuildEditorConfig.editorconfig
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.AssemblyInfoInputs.cache
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.AssemblyInfo.cs
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.csproj.CoreCompileInputs.cache
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.MvcApplicationPartsAssemblyInfo.cs
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.MvcApplicationPartsAssemblyInfo.cache
-C:\deloitte-bootcamp-dia26\dia01\primeira-api\obj\Debug\net10.0\primeira-api.sourcelink.json
