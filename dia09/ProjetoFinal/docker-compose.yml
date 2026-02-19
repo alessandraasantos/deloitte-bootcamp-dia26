@@ -2,7 +2,7 @@
 services:
   postgres:
     image: postgres:16
-    container_name: projeto_final_postgres
+    container_name:  projeto_final_postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
@@ -12,7 +12,7 @@ services:
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - projetofinal_pgdata_estudos:/var/lib/postgresql/data
+      - pgdata_estudos:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-apidb_final}"]
       interval: 5s
@@ -23,8 +23,8 @@ services:
     # Labels opcionais úteis para Rancher (facilitam identificação/agrupamento)
     labels:
       io.rancher.container.pull_image: always
-      io.rancher.container.name: "projetofinal_pgdata_estudos"
+      io.rancher.container.name: "PostgreSQL - Estudos"
 
 volumes:
-  projetofinal_pgdata_estudos:
+  pgdata_estudos:
     driver: local
