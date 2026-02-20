@@ -1,38 +1,29 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoFinal.Models;
 
-namespace ProjetoFinal.Data;
-
-public class AppDbContext : DbContext
+namespace ProjetoFinal.Data
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options)
-        : base(options) { }
-
-    public DbSet<EquipamentoMinas> Equipamentos => Set<EquipamentoMinas>();
-    public DbSet<Manutencao> Manutencoes => Set<Manutencao>();
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public class AppDbContext : DbContext
     {
-        modelBuilder.Entity<EquipamentoMinas>()
-            .HasIndex(e => e.Codigo)
-            .IsUnique();
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        modelBuilder.Entity<EquipamentoMinas>()
-            .Property(e => e.Tipo)
-            .HasConversion<string>();
+        public DbSet<EquipamentoMinas> Equipamentos { get; set; }
 
-        modelBuilder.Entity<EquipamentoMinas>()
-            .Property(e => e.StatusOperacional)
-            .HasConversion<string>();
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Índice Único para o Código (Regra do Desafio)
+            modelBuilder.Entity<EquipamentoMinas>()
+                .HasIndex(e => e.Codigo)
+                .IsUnique();
 
-        modelBuilder.Entity<Manutencao>()
-            .Property(m => m.Status)
-            .HasConversion<string>();
+            // Conversão de Enums para String
+            modelBuilder.Entity<EquipamentoMinas>()
+                .Property(e => e.Tipo)
+                .HasConversion<string>();
 
-        modelBuilder.Entity<Manutencao>()
-            .HasOne(m => m.EquipamentoMinas)
-            .WithMany(e => e.Manutencoes)
-            .HasForeignKey(m => m.EquipamentoMinasId)
-            .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<EquipamentoMinas>()
+                .Property(e => e.StatusOperacional)
+                .HasConversion<string>();
+        }
     }
 }
