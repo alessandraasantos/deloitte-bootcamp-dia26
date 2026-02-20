@@ -1,0 +1,6 @@
+C:\deloitte-bootcamp-dia26\dia10\ProjetoFinal.Tests\obj\Debug\net10.0\ProjetoFinal.Tests.csproj.AssemblyReference.cache
+C:\deloitte-bootcamp-dia26\dia10\ProjetoFinal.Tests\obj\Debug\net10.0\ProjetoFinal.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\deloitte-bootcamp-dia26\dia10\ProjetoFinal.Tests\obj\Debug\net10.0\ProjetoFinal.Tests.AssemblyInfoInputs.cache
+C:\deloitte-bootcamp-dia26\dia10\ProjetoFinal.Tests\obj\Debug\net10.0\ProjetoFinal.Tests.AssemblyInfo.cs
+C:\deloitte-bootcamp-dia26\dia10\ProjetoFinal.Tests\obj\Debug\net10.0\ProjetoFinal.Tests.csproj.CoreCompileInputs.cache
+C:\deloitte-bootcamp-dia26\dia10\ProjetoFinal.Tests\obj\Debug\net10.0\ProjetoFinal.Tests.sourcelink.json
