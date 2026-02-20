@@ -3,130 +3,121 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoFinal.Data;
 using ProjetoFinal.Models;
 
-namespace ProjetoFinal.Controllers
+namespace ProjetoFinal.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class EquipamentosController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class EquipamentosController : ControllerBase
+    private readonly AppDbContext _context;
+
+    public EquipamentosController(AppDbContext context)
     {
-        private readonly AppDbContext _context;
+        _context = context;
+    }
 
-        public EquipamentosController(AppDbContext context)
+    [HttpPost]
+    public async Task<ActionResult<EquipamentoMinas>> Post([FromBody] EquipamentoMinas equipamento)
+    {
+        equipamento.Codigo = equipamento.Codigo.Trim();
+
+        if (await _context.Equipamentos
+            .AnyAsync(e => e.Codigo == equipamento.Codigo))
         {
-            _context = context;
+            return Conflict(new { mensagem = "Já existe equipamento com esse código." });
         }
 
-        // POST: api/equipamentos
-        [HttpPost]
-        public async Task<ActionResult<EquipamentoMinas>> Post([FromBody] EquipamentoMinas equipamento)
+        _context.Equipamentos.Add(equipamento);
+        await _context.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(GetById),
+            new { id = equipamento.Id }, equipamento);
+    }
+
+    [HttpGet]
+    public async Task<ActionResult> GetAll(
+        string? tipo,
+        string? status,
+        string? codigo,
+        int page = 1,
+        int pageSize = 10)
+    {
+        if (page <= 0) page = 1;
+        if (pageSize <= 0 || pageSize > 100) pageSize = 10;
+
+        var query = _context.Equipamentos.AsQueryable();
+
+        if (!string.IsNullOrEmpty(tipo))
+            query = query.Where(e => e.Tipo.ToString() == tipo);
+
+        if (!string.IsNullOrEmpty(status))
+            query = query.Where(e => e.StatusOperacional.ToString() == status);
+
+        if (!string.IsNullOrEmpty(codigo))
+            query = query.Where(e => e.Codigo.Contains(codigo));
+
+        var totalItems = await query.CountAsync();
+
+        var items = await query
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return Ok(new { totalItems, page, pageSize, items });
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<EquipamentoMinas>> GetById(int id)
+    {
+        var eq = await _context.Equipamentos.FindAsync(id);
+        if (eq == null) return NotFound();
+
+        return Ok(eq);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, EquipamentoMinas equipamento)
+    {
+        if (id != equipamento.Id)
+            return BadRequest();
+
+        equipamento.Codigo = equipamento.Codigo.Trim();
+
+        if (await _context.Equipamentos
+            .AnyAsync(e => e.Codigo == equipamento.Codigo && e.Id != id))
         {
-            if (equipamento == null) return BadRequest("Dados inválidos.");
+            return Conflict(new { mensagem = "Código já existe." });
+        }
 
-            // Garante a regra de negócio de limpar espaços no código
-            equipamento.Codigo = equipamento.Codigo?.Trim();
+        _context.Entry(equipamento).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
 
-            // Validação de unicidade antes de tentar salvar
-            if (await _context.Equipamentos.AnyAsync(e => e.Codigo == equipamento.Codigo))
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var eq = await _context.Equipamentos
+            .Include(e => e.Manutencoes)
+            .FirstOrDefaultAsync(e => e.Id == id);
+
+        if (eq == null) return NotFound();
+
+        bool temConcluida = eq.Manutencoes
+            .Any(m => m.Status == StatusManutencao.Concluida);
+
+        if (temConcluida)
+        {
+            return Conflict(new
             {
-                return Conflict(new { mensagem = "Já existe um equipamento com este código." });
-            }
-
-            _context.Equipamentos.Add(equipamento);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetById), new { id = equipamento.Id }, equipamento);
-        }
-
-        // GET: api/equipamentos (com filtros e paginação)
-        [HttpGet]
-        public async Task<ActionResult> GetAll(
-            [FromQuery] string? tipo, 
-            [FromQuery] string? status, 
-            [FromQuery] string? codigo,
-            [FromQuery] int page = 1, 
-            [FromQuery] int pageSize = 10)
-        {
-            var query = _context.Equipamentos.AsQueryable();
-
-            // Filtros dinâmicos
-            if (!string.IsNullOrEmpty(tipo)) 
-                query = query.Where(e => e.Tipo.ToString() == tipo);
-            
-            if (!string.IsNullOrEmpty(status)) 
-                query = query.Where(e => e.StatusOperacional.ToString() == status);
-            
-            if (!string.IsNullOrEmpty(codigo)) 
-                query = query.Where(e => e.Codigo.Contains(codigo));
-
-            // Paginação
-            var totalItems = await query.CountAsync();
-            var items = await query
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
-            return Ok(new 
-            { 
-                totalItems, 
-                page, 
-                pageSize, 
-                items 
+                mensagem = "Não é possível remover: existem manutenções concluídas."
             });
         }
 
-        // GET: api/equipamentos/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<EquipamentoMinas>> GetById(int id)
-        {
-            var eq = await _context.Equipamentos.FindAsync(id);
-            if (eq == null) return NotFound(new { mensagem = "Equipamento não encontrado." });
-            
-            return Ok(eq);
-        }
+        _context.Equipamentos.Remove(eq);
+        await _context.SaveChangesAsync();
 
-        // PUT: api/equipamentos/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] EquipamentoMinas equipamento)
-        {
-            if (id != equipamento.Id) 
-                return BadRequest(new { mensagem = "O ID da URL não coincide com o ID do objeto." });
-            
-            _context.Entry(equipamento).State = EntityState.Modified;
-            
-            try 
-            {
-                await _context.SaveChangesAsync();
-            } 
-            catch (DbUpdateException) 
-            {
-                if (!await _context.Equipamentos.AnyAsync(e => e.Id == id))
-                    return NotFound();
-                
-                return Conflict(new { mensagem = "Erro ao atualizar. Verifique se o código já existe." });
-            }
-
-            return NoContent();
-        }
-
-        // DELETE: api/equipamentos/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var eq = await _context.Equipamentos.FindAsync(id);
-            if (eq == null) return NotFound();
-
-            // Regra da Vale: Não deletar se houver manutenções concluídas
-            // Aqui simulamos a checagem. Se você tiver a tabela de manutenções, 
-            // faria uma consulta aqui.
-            bool temManutencaoConcluida = false; 
-            
-            if (temManutencaoConcluida)
-                return Conflict(new { mensagem = "Não é possível remover: existem manutenções concluídas associadas." });
-
-            _context.Equipamentos.Remove(eq);
-            await _context.SaveChangesAsync();
-            
-            return NoContent();
-        }
+        return NoContent();
     }
 }

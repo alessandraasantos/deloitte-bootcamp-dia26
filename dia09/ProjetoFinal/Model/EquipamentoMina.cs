@@ -11,14 +11,13 @@ namespace ProjetoFinal.Models
 
         [Required(ErrorMessage = "O código é obrigatório.")]
         [StringLength(50)]
-        // O índice único será configurado via Fluent API no DbContext
-        public string Codigo { get; set; }
+        public string Codigo { get; set; } = string.Empty;
 
         [Required]
         public TipoEquipamento Tipo { get; set; }
 
         [Required(ErrorMessage = "O modelo é obrigatório.")]
-        public string Modelo { get; set; }
+        public string Modelo { get; set; } = string.Empty;
 
         [Range(0, double.MaxValue, ErrorMessage = "O horímetro não pode ser negativo.")]
         [Column(TypeName = "decimal(18,2)")]
@@ -30,16 +29,10 @@ namespace ProjetoFinal.Models
         [DataType(DataType.Date)]
         public DateTime DataAquisicao { get; set; }
 
-        public string LocalizacaoAtual { get; set; }
+        public string? LocalizacaoAtual { get; set; }
 
-        // Construtor para garantir o Trim() no código conforme a regra
-        public EquipamentoMinas()
-        {
-            if (!string.IsNullOrEmpty(Codigo))
-            {
-                Codigo = Codigo.Trim();
-            }
-        }
+        // Relacionamento 1:N → Um equipamento pode ter várias manutenções
+        public ICollection<Manutencao> Manutencoes { get; set; } = new List<Manutencao>();
     }
 
     public enum TipoEquipamento

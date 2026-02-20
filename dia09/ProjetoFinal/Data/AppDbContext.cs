@@ -2,20 +2,21 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoFinal.Models;
 
 namespace ProjetoFinal.Data;
+
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options) { }
 
-    public DbSet<EquipamentoMinas> Equipamentos { get; set; }
+    public DbSet<EquipamentoMinas> Equipamentos => Set<EquipamentoMinas>();
+    public DbSet<Manutencao> Manutencoes => Set<Manutencao>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Regra de Negócio: Codigo único no banco de dados
         modelBuilder.Entity<EquipamentoMinas>()
             .HasIndex(e => e.Codigo)
             .IsUnique();
 
-        // Salvar Enums como Strings no banco (opcional, mas melhor para leitura manual no Postgres)
         modelBuilder.Entity<EquipamentoMinas>()
             .Property(e => e.Tipo)
             .HasConversion<string>();
@@ -23,5 +24,15 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<EquipamentoMinas>()
             .Property(e => e.StatusOperacional)
             .HasConversion<string>();
+
+        modelBuilder.Entity<Manutencao>()
+            .Property(m => m.Status)
+            .HasConversion<string>();
+
+        modelBuilder.Entity<Manutencao>()
+            .HasOne(m => m.EquipamentoMinas)
+            .WithMany(e => e.Manutencoes)
+            .HasForeignKey(m => m.EquipamentoMinasId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
